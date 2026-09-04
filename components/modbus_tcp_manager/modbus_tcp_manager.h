@@ -145,7 +145,6 @@ public:
 
         if (resp_data.empty()) {
             response.error_message = "Receive failed";
-            is_connected_ = false;
             return response;
         }
 
