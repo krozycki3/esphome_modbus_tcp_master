@@ -316,7 +316,7 @@ private:
                 FD_SET(connection_check_sock_, &error_fds);
                 
                 struct timeval timeout;
-                timeout.tv_sec = 0;
+                timeout.tv_sec = 2;
                 timeout.tv_usec = 1000;  // 1ms timeout - very fast check
                 
                 int select_result = ::select(connection_check_sock_ + 1, nullptr, &write_fds, &error_fds, &timeout);
