@@ -29,7 +29,7 @@ CONFIG_SCHEMA = cv.Schema({
     cv.GenerateID(): cv.declare_id(ModbusTCPManager),
     cv.Required(CONF_HOST): cv.string,
     cv.Optional(CONF_PORT, default=502): cv.port,
-    cv.Optional(CONF_UNIT_ID, default=1): cv.int_range(min=1, max=255),
+    cv.Optional(CONF_UNIT_ID, default=1): cv.int_range(min=0, max=255),
     cv.Optional(CONF_WATCHDOG_REGISTER): cv.positive_int,
     cv.Optional(CONF_WATCHDOG_INTERVAL, default="10s"): cv.positive_time_period_milliseconds,
     cv.Optional(CONF_SAFE_MODE_REGISTERS, default=[]): cv.All(cv.ensure_list(SAFE_MODE_REGISTER_SCHEMA)),
