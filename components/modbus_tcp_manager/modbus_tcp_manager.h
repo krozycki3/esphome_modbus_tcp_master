@@ -363,7 +363,7 @@ private:
                     if (!is_connected_) {
                         ESP_LOGI(TAG, "Modbus connection restored to %s:%d", host_.c_str(), port_);
                         is_connected_ = true;
-                        delay(1000);
+                        delay(3000);
                     }
                 } else {
                     if (is_connected_) {
