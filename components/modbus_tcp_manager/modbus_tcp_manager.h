@@ -364,7 +364,7 @@ private:
                         ESP_LOGI(TAG, "Modbus connection restored to %s:%d", host_.c_str(), port_);
                         is_connected_ = true;
                         delay(3000);
-                        ESP_LOGI(TAG, "Modbus delay 3sec);
+                        ESP_LOGI(TAG, "Modbus delay 3sec");
                          delay(1000);
                     }
                 } else {
