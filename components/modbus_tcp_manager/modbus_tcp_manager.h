@@ -334,7 +334,7 @@ private:
                         ::getsockopt(connection_check_sock_, SOL_SOCKET, SO_ERROR, &error, &len);
                         
                         if (error == 0) {
-                            delay(3000);
+                            delay(2300);
                             ESP_LOGV(TAG, "Connection check succeeded");
                             connection_check_success_ = true;
                         } else {
