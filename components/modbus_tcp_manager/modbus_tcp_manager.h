@@ -334,7 +334,7 @@ private:
                         ::getsockopt(connection_check_sock_, SOL_SOCKET, SO_ERROR, &error, &len);
                         
                         if (error == 0) {
-                            delay(2300);
+                            delay(2100);
                             ESP_LOGV(TAG, "Connection check succeeded");
                             connection_check_success_ = true;
                         } else {
@@ -364,9 +364,9 @@ private:
                     if (!is_connected_) {
                         ESP_LOGI(TAG, "Modbus connection restored to %s:%d", host_.c_str(), port_);
                         is_connected_ = true;
-                        delay(3000);
-                        ESP_LOGI(TAG, "Modbus delay 3sec");
-                         delay(1000);
+                        //delay(3000);
+                        //ESP_LOGI(TAG, "Modbus delay 3sec");
+                         //delay(1000);
                     }
                 } else {
                     if (is_connected_) {
