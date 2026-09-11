@@ -22,7 +22,7 @@ namespace esphome {
 namespace modbus_tcp {
 
 static const char *const TAG = "modbus_tcp_manager";
-
+//Definicja polecen MODBUS
 enum class ModbusFunction : uint8_t {
     READ_COILS = 0x01,
     READ_DISCRETE_INPUTS = 0x02,  
@@ -72,6 +72,7 @@ public:
         ESP_LOGD(TAG, "Added safe mode: register %d = %d", reg, value);
     }
 
+//W pętli loop() sprawdzane jest wyłacznie czy połaczenie jest aktywne.
     void loop() override {
         uint32_t now = millis();
         
@@ -436,6 +437,8 @@ private:
     }
 
     int create_connection() {
+            ESP_LOGV(TAG, "Start Sreate_connectio");
+
         int sock = ::socket(AF_INET, SOCK_STREAM, 0);
         if (sock < 0) {
             ESP_LOGV(TAG, "Could not create socket: %d", errno);
@@ -683,7 +686,7 @@ private:
 class ModbusTCPConnectionSensor : public PollingComponent, public binary_sensor::BinarySensor {
 public:
     ModbusTCPConnectionSensor(ModbusTCPManager *parent) : parent_(parent) {
-        this->set_update_interval(1000);  // Check every 1 second for faster response
+        this->set_update_interval(10000);  // Check every 1 second for faster response
     }
 
     void setup() override {
