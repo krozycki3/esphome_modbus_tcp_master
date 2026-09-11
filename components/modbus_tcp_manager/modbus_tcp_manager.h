@@ -437,7 +437,7 @@ private:
     }
 
     int create_connection() {
-            ESP_LOGD(TAG, "Start Sreate_connectio");
+            ESP_LOGI(TAG, "Start Sreate_connectio");
 
         int sock = ::socket(AF_INET, SOCK_STREAM, 0);
         if (sock < 0) {
