@@ -510,6 +510,7 @@ private:
         ::fcntl(sock, F_SETFL, flags);
 
         ESP_LOGVV(TAG, "Connected to %s:%d", host_.c_str(), port_);
+	delay (3000);
         return sock;
     }
 
